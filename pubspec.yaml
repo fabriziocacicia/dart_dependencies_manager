@@ -1,0 +1,15 @@
+name: dart_dependencies_manager
+description: A simple dependencies manager
+version: 1.0.0
+publish_to: none
+
+environment:
+  sdk: '>=2.13.0 <3.0.0'
+
+
+dev_dependencies:
+  # Dependency Injection
+  get_it: ^7.1.3
+
+  # Linting and Code analysis
+  effective_dart: ^1.3.1
