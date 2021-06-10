@@ -1,3 +1,9 @@
+## UNRELEASED
+
+## 1.0.2
+
+- fix: broken `pubspec.yaml` fixed
+
 ## 1.0.1
 
 - fix: dependencies made impossible to import the package  
