@@ -1,4 +1,6 @@
-# UNRELEASED
+## UNRELEASED
+
+## 1.0.2
 
 - fix: broken `pubspec.yaml` fixed
 
