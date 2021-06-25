@@ -18,6 +18,15 @@ abstract class DependenciesManager {
     }
   }
 
+  static void registerSingletonAsync<T extends Object>({
+    required Future<T> Function() factoryFunction,
+    Iterable<Type>? dependsOn
+  }){
+    if (!GetIt.I.isRegistered<T>()) {
+      GetIt.I.registerSingletonAsync(factoryFunction, dependsOn: dependsOn);
+    }
+  }
+
   /// Retrieve an instance of an object of type [T] that must have been
   /// previously registered.
   static T retrieve<T extends Object>() => GetIt.I<T>();
