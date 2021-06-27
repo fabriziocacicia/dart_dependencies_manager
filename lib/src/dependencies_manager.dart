@@ -18,12 +18,10 @@ abstract class DependenciesManager {
     }
   }
 
-  static void registerSingletonAsync<T extends Object>({
-    required Future<T> Function() factoryFunction,
-    Iterable<Type>? dependsOn
-  }){
+  static void registerSingletonAsync<T extends Object>(
+      Future<T> Function() factoryFunction) {
     if (!GetIt.I.isRegistered<T>()) {
-      GetIt.I.registerSingletonAsync(factoryFunction, dependsOn: dependsOn);
+      GetIt.I.registerLazySingletonAsync<T>(factoryFunction);
     }
   }
 
