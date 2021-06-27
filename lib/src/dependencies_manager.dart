@@ -32,5 +32,5 @@ abstract class DependenciesManager {
   static T retrieve<T extends Object>() => GetIt.I<T>();
 
   static Future<T> retrieveAsync<T extends Object>() =>
-      GetIt.instance.getAsync();
+      GetIt.instance.getAsync<T>();
 }
