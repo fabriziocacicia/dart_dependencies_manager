@@ -30,4 +30,7 @@ abstract class DependenciesManager {
   /// Retrieve an instance of an object of type [T] that must have been
   /// previously registered.
   static T retrieve<T extends Object>() => GetIt.I<T>();
+
+  static Future<T> retrieveAsync<T extends Object>() =>
+      GetIt.instance.getAsync();
 }
