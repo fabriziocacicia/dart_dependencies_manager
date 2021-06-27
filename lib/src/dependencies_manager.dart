@@ -1,5 +1,7 @@
 import 'package:get_it/get_it.dart';
 
+typedef DependencyFactory<T extends Object> =  Future<T> Function();
+
 /// Manages all the dependencies of the applications.
 /// It can `register` a new dependency and then `retrieve` it to who needs it.
 /// All of its methods are static so it is not needed to have an instance of it
@@ -19,7 +21,7 @@ abstract class DependenciesManager {
   }
 
   static void registerSingletonAsync<T extends Object>(
-      Future<T> Function() factoryFunction) {
+      DependencyFactory<T> factoryFunction) {
     if (!GetIt.I.isRegistered<T>()) {
       GetIt.I.registerLazySingletonAsync<T>(factoryFunction);
     }
