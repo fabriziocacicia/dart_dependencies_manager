@@ -33,4 +33,6 @@ abstract class DependenciesManager {
 
   static Future<T> retrieveAsync<T extends Object>() =>
       GetIt.instance.getAsync<T>();
+
+  static Future<void> allReady() => GetIt.I.allReady(timeout: Duration(seconds: 2));
 }
