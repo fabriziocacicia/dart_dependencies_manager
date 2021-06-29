@@ -34,8 +34,11 @@ abstract class DependenciesManager {
   static Future<T> retrieveAsync<T extends Object>() =>
       GetIt.instance.getAsync<T>();
 
-  static Future<void> allReady() => GetIt.I.allReady(timeout: Duration(seconds: 2));
-  
+  static Future<bool> areAllReady() => GetIt.I
+      .allReady()
+      .then<bool>((value) => true)
+      .onError((error, stackTrace) => false);
+
   static Future<bool> isRegistered<T extends Object>() async {
     return GetIt.I.isRegistered<T>() ||
         await GetIt.I
