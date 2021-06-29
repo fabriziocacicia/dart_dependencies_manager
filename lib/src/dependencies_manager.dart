@@ -23,7 +23,7 @@ abstract class DependenciesManager {
   static void registerSingletonAsync<T extends Object>(
       DependencyFactory<T> factoryFunction) {
     if (!GetIt.I.isRegistered<T>()) {
-      GetIt.I.registerLazySingletonAsync<T>(factoryFunction);
+      GetIt.I.registerSingletonAsync<T>(factoryFunction);
     }
   }
 
