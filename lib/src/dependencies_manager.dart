@@ -8,7 +8,7 @@ typedef DependencyFactory<T extends Object> =  Future<T> Function();
 /// to use it, in fact it is not even possible to do it since it is implemented
 /// as an abstract class.
 abstract class DependenciesManager {
-  /// Register a lazy singleton synchronously in the dependencies container.
+  /// Registers a lazy singleton synchronously in the dependencies container.
   /// Be sure to provide both the type [T] and the [instance].
   ///
   /// The type [T] is needed to check if there is a dependency with
@@ -20,7 +20,7 @@ abstract class DependenciesManager {
     }
   }
 
-  /// Register a dependency asynchronously.
+  /// Registers a dependency asynchronously.
   /// It could be useful when for example, its creation needs to fetch something
   /// from internet) or when it has a dependency to some other dependencies that
   /// could not be registered yet.
