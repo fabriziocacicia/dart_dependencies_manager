@@ -20,6 +20,15 @@ abstract class DependenciesManager {
     }
   }
 
+  /// Register a dependency asynchronously.
+  /// It could be useful when for example, its creation needs to fetch something
+  /// from internet) or when it has a dependency to some other dependencies that
+  /// could not be registered yet.
+  /// The dependency is registered providing a [factoryFunction] that build it
+  /// asynchronously.
+  /// Specifying the type [T] explicitly is important to be able to check if
+  /// another singleton of the same type was registered previously and avoid
+  /// crashes.
   static void registerAsync<T extends Object>(
       DependencyFactory<T> factoryFunction) {
     if (!GetIt.I.isRegistered<T>()) {
