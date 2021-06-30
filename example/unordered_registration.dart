@@ -13,10 +13,10 @@ class ChildDependency {
 }
 
 Future<void> main() async {
-  DependenciesManager.registerSingletonAsync<ChildDependency>(() async =>
+  DependenciesManager.registerAsync<ChildDependency>(() async =>
       ChildDependency(
           await DependenciesManager.retrieveAsync<RootDependency>()));
-  DependenciesManager.registerSingletonAsync<RootDependency>(
+  DependenciesManager.registerAsync<RootDependency>(
       () async => RootDependency(0));
 
   final child = await DependenciesManager.retrieveAsync<ChildDependency>();
