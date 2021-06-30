@@ -41,8 +41,13 @@ abstract class DependenciesManager {
   /// dependencies already satisfied in order to be retrieved.
   static T retrieve<T extends Object>() => GetIt.I<T>();
 
-  static Future<T> retrieveAsync<T extends Object>() =>
-      GetIt.instance.getAsync<T>();
+  static Future<T> retrieveAsync<T extends Object>() {
+    try {
+      return GetIt.instance.getAsync<T>();
+    } on AssertionError catch (e) {
+      throw DependencyNotFoundException(message: e.message.toString());
+    }
+  }
 
   static Future<bool> areAllReady() => GetIt.I
       .allReady()
