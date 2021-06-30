@@ -36,8 +36,9 @@ abstract class DependenciesManager {
     }
   }
 
-  /// Retrieve an instance of an object of type [T] that must have been
-  /// previously registered.
+  /// Retrieves synchronously the dependency of type [T].
+  /// The dependency must have been previously registered and all of its own
+  /// dependencies already satisfied in order to be retrieved.
   static T retrieve<T extends Object>() => GetIt.I<T>();
 
   static Future<T> retrieveAsync<T extends Object>() =>
