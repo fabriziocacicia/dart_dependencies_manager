@@ -1,5 +1,7 @@
 ## UNRELEASED
 
+## 1.1.0
+
 - Add the ability to register and retrieve dependencies asynchronously
 - Add the `DependencyNotFoundExcpetion`
 
