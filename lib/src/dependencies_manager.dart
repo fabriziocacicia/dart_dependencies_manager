@@ -1,6 +1,7 @@
 import 'package:dart_dependencies_manager/src/exceptions.dart';
 import 'package:get_it/get_it.dart';
 
+/// The signature for the factory function for register a dependency.
 typedef DependencyFactory<T extends Object> = Future<T> Function();
 
 /// Manages all the dependencies of the applications.
