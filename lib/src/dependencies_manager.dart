@@ -61,10 +61,9 @@ abstract class DependenciesManager {
     }
   }
 
-  static Future<bool> areAllReady() => GetIt.I
-      .allReady()
-      .then<bool>((value) => true)
-      .onError((error, stackTrace) => false);
+  /// Creates a Future that completes when all the registered dependencies are
+  /// resolved and ready to be retrieved.
+  static Future<void> resolve() => GetIt.I.allReady();
 
   static Future<bool> isRegistered<T extends Object>() async {
     return GetIt.I.isRegistered<T>() ||
