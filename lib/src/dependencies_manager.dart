@@ -64,11 +64,4 @@ abstract class DependenciesManager {
   /// Creates a Future that completes when all the registered dependencies are
   /// resolved and ready to be retrieved.
   static Future<void> resolve() => GetIt.I.allReady();
-
-  static Future<bool> isRegistered<T extends Object>() async {
-    return GetIt.I.isRegistered<T>() ||
-        await GetIt.I
-            .isReady<T>(timeout: Duration(seconds: 2))
-            .then<bool>((value) => true);
-  }
 }
