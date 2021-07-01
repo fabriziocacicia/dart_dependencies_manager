@@ -1,3 +1,4 @@
+import 'package:dart_dependencies_manager/src/exceptions.dart';
 import 'package:get_it/get_it.dart';
 
 typedef DependencyFactory<T extends Object> =  Future<T> Function();
