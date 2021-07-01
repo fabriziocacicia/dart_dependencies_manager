@@ -7,8 +7,8 @@ import 'dependencies.dart';
 /// In this case the retrieval of the [ChildDependency] fails because it needs
 /// the [RootDependency] in order to successfully register the child one.
 void main() {
-  DependenciesManager.registerLazySingleton<ChildDependency>(ChildDependency(DependenciesManager.retrieve<RootDependency>()));
-  DependenciesManager.registerLazySingleton<RootDependency>(RootDependency(9));
+  DependenciesManager.register<ChildDependency>(ChildDependency(DependenciesManager.retrieve<RootDependency>()));
+  DependenciesManager.register<RootDependency>(RootDependency(9));
 
   final childDependency = DependenciesManager.retrieve<ChildDependency>();
 

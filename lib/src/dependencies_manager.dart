@@ -9,13 +9,13 @@ typedef DependencyFactory<T extends Object> = Future<T> Function();
 /// to use it, in fact it is not even possible to do it since it is implemented
 /// as an abstract class.
 abstract class DependenciesManager {
-  /// Registers a lazy singleton synchronously in the dependencies container.
+  /// Registers a dependency synchronously.
   /// Be sure to provide both the type [T] and the [instance].
   ///
   /// The type [T] is needed to check if there is a dependency with
   /// that type already registered.
   /// The [instance] is the one to be registered.
-  static void registerLazySingleton<T extends Object>(T instance) {
+  static void register<T extends Object>(T instance) {
     if (!GetIt.I.isRegistered<T>()) {
       GetIt.I.registerLazySingleton<T>(() => instance);
     }
