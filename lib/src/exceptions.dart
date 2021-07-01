@@ -1,6 +1,10 @@
+/// The exception thrown when a dependency is not found during a request to
+/// retrieve it.
 class DependencyNotFoundException implements Exception {
+  /// The error message.
   final String message;
 
+  /// Creates a [DependencyNotFoundException] with an associated error [message].
   DependencyNotFoundException({required final this.message});
 
   String get _parsedGetItAssertionErrorMessage {
