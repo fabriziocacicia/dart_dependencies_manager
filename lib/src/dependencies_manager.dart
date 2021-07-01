@@ -39,7 +39,13 @@ abstract class DependenciesManager {
   /// Retrieves a dependency of type [T] synchronously.
   /// The dependency must have been previously registered and all of its own
   /// dependencies already satisfied in order to be retrieved.
-  static T retrieve<T extends Object>() => GetIt.I<T>();
+  static T retrieve<T extends Object>() {
+    try {
+      return GetIt.I<T>();
+    } on AssertionError catch (e) {
+      throw DependencyNotFoundException(message: e.message.toString());
+    }
+  }
 
   /// Retrieve a dependency of type [T] asynchronously.
   /// It returns a Future that completes successfully when all the dependencies
