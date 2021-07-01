@@ -1,7 +1,7 @@
 import 'package:dart_dependencies_manager/src/exceptions.dart';
 import 'package:get_it/get_it.dart';
 
-typedef DependencyFactory<T extends Object> =  Future<T> Function();
+typedef DependencyFactory<T extends Object> = Future<T> Function();
 
 /// Manages all the dependencies of the applications.
 /// It can `register` a new dependency and then `retrieve` it to who needs it.
@@ -71,5 +71,4 @@ abstract class DependenciesManager {
             .isReady<T>(timeout: Duration(seconds: 2))
             .then<bool>((value) => true);
   }
-
 }
