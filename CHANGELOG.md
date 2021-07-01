@@ -1,5 +1,8 @@
 ## UNRELEASED
 
+- Add the ability to register and retrieve dependencies asynchronously
+- Add the `DependencyNotFoundExcpetion`
+
 ## 1.0.2
 
 - fix: broken `pubspec.yaml` fixed
