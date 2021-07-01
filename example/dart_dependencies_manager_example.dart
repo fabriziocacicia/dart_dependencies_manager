@@ -9,7 +9,7 @@ class Dependency {
 void main() {
   final dependencyToRegister = Dependency(0);
 
-  DependenciesManager.registerLazySingleton<Dependency>(dependencyToRegister);
+  DependenciesManager.register<Dependency>(dependencyToRegister);
 
   final retrievedDependency = DependenciesManager.retrieve<Dependency>();
 
