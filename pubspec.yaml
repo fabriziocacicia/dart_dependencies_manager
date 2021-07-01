@@ -1,6 +1,6 @@
 name: dart_dependencies_manager
 description: A simple dependencies manager
-version: 1.0.2
+version: 1.1.0
 publish_to: none
 
 environment:
